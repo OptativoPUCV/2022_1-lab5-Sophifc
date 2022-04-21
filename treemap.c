@@ -44,15 +44,16 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-  //buscar la posicion
+
   if(searchTreeMap(tree,key)!=NULL){
-    //el nodo ya existe
     return;
   }
   else{
     //buscar donde ubicar el nodo
+    
+    TreeNode *nuevoNodo=createTreeNode(key,value);
   }
-  TreeNode *nuevoNodo=createTreeNode(key,value);
+  
 
 }
 
