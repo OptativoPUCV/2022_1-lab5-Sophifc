@@ -47,7 +47,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   //buscar la posicion
   if(searchTreeMap(tree,key)!=NULL){
     //el nodo ya existe
-    return NULL;
+    return;
   }
   else{
     //buscar donde ubicar el nodo
