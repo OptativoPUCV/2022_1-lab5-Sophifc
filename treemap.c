@@ -99,6 +99,49 @@ TreeNode * minimum(TreeNode * x){
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
+  // SIN HIJO
+   if(node->left == NULL && node->right == NULL){
+     TreeNode *parent = node->parent;
+     if(parent == NULL) tree->root = NULL;
+     if(parent->left == node) parent->left = NULL;
+     else parent->right = NULL;
+     free(node);
+   }
+  // 1 HIJO
+  if(node->left != NULL && node->right == NULL){
+    TreeNode *parent = node->parent;
+    node->left->parent = parent;
+    if(parent->left == node) {
+      parent->left = node->left;
+    } else {
+      parent->right = node->left;
+    }
+    free(node);
+  }
+
+  if(node->left == NULL && node->right != NULL){
+   TreeNode *parent = node->parent;
+   node->right->parent = parent;
+    if(parent->right == node) {
+      parent->left = node->right;
+    } else {
+      parent->right = node->right;
+    }
+    free(node);
+  }
+
+  if(node->right!=NULL && node->left!=NULL){
+   // TreeNode *parent = node;
+    TreeNode *aux = node->right;
+    aux = minimum(aux);
+    node->key = aux->key;
+    //node->value = aux->value;
+   /* if(parent->right == aux){
+      parent->right = NULL;
+    }else parent->left = NULL;*/
+   // free(aux);
+    removeNode(tree,aux);
+  }
 
 }
 
