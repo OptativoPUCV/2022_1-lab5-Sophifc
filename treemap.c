@@ -94,7 +94,7 @@ TreeNode * minimum(TreeNode * x){
     }
     return x;
   }
-  return NULL;
+  //return NULL;
 }
 
 
@@ -177,26 +177,27 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
      }
    }
   }
-  return NULL;
+  //return NULL;
 }
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
   TreeNode *aux = tree->root;
-  //TreeNode *rango;
 
   while(aux != NULL){
-      //if(rango == NULL) rango = aux; 
-      if(tree->lower_than(key, aux->pair->key) == 1){
-        aux = aux->left;
-      }
-      if(tree->lower_than(aux->pair->key, key) == 1){
-        aux=aux->right;
-      }else break;
+    if(tree->lower_than(key, aux->pair->key) == 1){
+      aux = aux->left;
+    }
+    if(tree->lower_than(aux->pair->key, key) == 1){
+      aux=aux->right;
+    }
+    else{
+      break;
+    }
   }
   if(aux == NULL) return NULL;
   return aux->pair->value;
-    return NULL;
+  //return NULL;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
