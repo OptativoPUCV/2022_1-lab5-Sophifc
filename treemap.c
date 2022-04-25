@@ -134,7 +134,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
    // TreeNode *parent = node;
     TreeNode *aux = node->right;
     aux = minimum(aux);
-    node->key = aux->key;
+    node->pair->key = aux->key;
     //node->value = aux->value;
    /* if(parent->right == aux){
       parent->right = NULL;
