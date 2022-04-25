@@ -219,7 +219,7 @@ Pair * nextTreeMap(TreeMap * tree) {
   if(tree->current->right != NULL){
     aux = tree->current->right;
     tree->current = minimum(aux);
-    return tree->current->pair->value;
+    return tree->current->pair;
   } 
 
   respaldo = tree->current->parent;
