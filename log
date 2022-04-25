@@ -74,3 +74,9 @@ treemap.c:56:15: error: unused variable ‘nuevoNodo’ [-Werror=unused-variable
 cc1: all warnings being treated as errors
 Compilation failed
 aa6fdff
+Mon Apr 25 01:53:20 UTC 2022: 
+ treemap.c | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+ tests:  11|6
+total_score: 15/70
+ed2998a
