@@ -206,7 +206,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-  if(tree == NULL){
+  /*if(tree == NULL){
     return NULL;
   }
   TreeNode *respaldo;
@@ -228,5 +228,5 @@ Pair * nextTreeMap(TreeMap * tree) {
     return NULL;
   }
   return tree->current->pair->value;
-  return NULL;
+  return NULL;*/
 }
