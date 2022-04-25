@@ -209,6 +209,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+  
   if(tree == NULL){
     return NULL;
   }
@@ -230,6 +231,6 @@ Pair * nextTreeMap(TreeMap * tree) {
   if(tree->current == NULL){ 
     return NULL;
   }
-  return tree->current->pair->value;
+  return tree->current->pair;
   //return NULL;
 }
