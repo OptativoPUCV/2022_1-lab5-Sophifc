@@ -137,6 +137,20 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
+  TreeNode *aux = tree->root;
+  //TreeNode *rango;
+
+  while(aux != NULL){
+      //if(rango == NULL) rango = aux; 
+      if(tree->lower_than(key, aux->key) == 1){
+        aux = aux->left;
+      }
+      if(tree->lower_than(aux->key, key) == 1){
+        aux=aux->right;
+      }else break;
+  }
+  if(aux == NULL) return NULL;
+  return aux->value;
     return NULL;
 }
 
