@@ -145,5 +145,27 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+  if(tree == NULL){
     return NULL;
+  }
+  TreeNode *respaldo;
+  TreeNode *aux;
+    
+  if(tree->current->right != NULL){
+    aux = tree->current->right;
+    tree->current = minimum(aux);
+    return tree->current->value;
+  } 
+
+  respaldo = tree->current->parent;
+  while (respaldo != NULL && tree->current == respaldo->right) {
+    tree->current = respaldo;
+    respaldo = respaldo->parent;
+  }
+  tree->current = respaldo;
+  if(tree->current == NULL){ 
+    return NULL;
+  }
+  return tree->current->value;
+  return NULL;
 }
